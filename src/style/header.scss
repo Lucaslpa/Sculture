@@ -1,0 +1,156 @@
+@import './color.scss';
+
+#Header { 
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    padding: 25px 45px;
+    justify-content: space-around;
+}
+
+#Header-Nav {
+      display: none;  
+     
+}
+#Header-Nav a { 
+     text-decoration: none;
+     font-size: calc((2 - 1) * 0.5vh + 0.9rem);
+     color: $blackColor;
+     height: 25px;
+
+}
+
+.Selected { 
+    border-bottom: solid 1px $blackColor;
+}
+
+#Logo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+
+}
+
+#Logo a {
+    font-size: calc(1em + 1vw);
+    line-height: calc(1.2em + 1vw);
+     text-decoration: none;
+     color: $blackColor;
+     font-weight: 600;
+     width: 100px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+#Header-icons {
+     display: flex;
+     height: 40px;
+     justify-content: flex-end;
+    
+}
+
+#Header-icons img { 
+    width: 20px;
+    cursor: pointer;
+
+}
+#Header-Icon-twitter {
+    display: none;
+}
+#Header-Icon-instagram {
+    display: none;
+}
+
+
+#Header-Icon-Cart  { 
+    display: flex;
+}
+
+
+#Menu-Icon { 
+    display: flex;
+width: 30px;
+height: 40px;
+cursor: pointer; 
+justify-content: center;
+align-items: center;
+
+  
+}
+
+
+
+#Menu-Nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    height: 80%;
+    background-color: white;
+    z-index: 1000;
+ 
+}
+
+#Menu-Nav-Item {
+     margin: 10px;
+     font-size: 30px;
+     text-decoration: none;
+     color: $blackColor;
+     font-weight: 600;
+}
+
+
+#Menu-Icon-x {
+    display: flex;
+    width: 20px;
+    margin-right:10px ;
+    height: 40px;
+    cursor: pointer; 
+}
+
+
+@media screen and (min-width:900px) {
+
+
+    #Logo {
+        width: 300px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      
+      }
+
+
+#Menu-Icon { 
+    display: none;
+}
+#Header {
+     justify-content: space-between;
+     padding: 50px 45px;
+
+}    
+     
+#Header-Nav {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 300px;
+}
+
+#Header-Icon-twitter {
+     display: flex;
+     margin: 0 10px;
+}
+#Header-Icon-instagram {
+     display: flex;
+}
+
+
+#Header-Icon-Cart  { 
+    margin-left: 20px;
+}
+}
