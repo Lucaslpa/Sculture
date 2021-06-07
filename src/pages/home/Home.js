@@ -1,6 +1,6 @@
 import {Header} from './components/header'
+import {Footer} from './components/footer'
 import {Compras} from '../compras/Compras'
-
 
 
 
@@ -9,6 +9,7 @@ export const Home = () => {
           <div>
               <Header/>
               <Compras/>
+              <Footer/>
           </div>
      )
 }
