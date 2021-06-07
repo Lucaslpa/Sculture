@@ -4,6 +4,7 @@ import twitter from '../../../assets/twitter.svg'
 import menu from '../../../assets/menu.svg'
 import x from '../../../assets/letra-x.svg'
 import { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 
 
 
@@ -15,7 +16,6 @@ export const Header = () => {
       
 
       function selectPage(e) {
-           e.preventDefault()
            getNavItemsArray.forEach(i => i.classList.remove('Selected'))
            this.classList.add('Selected')
       }
@@ -23,7 +23,16 @@ export const Header = () => {
        useEffect(()=> {
          getNavItemsArray = document.querySelectorAll('#Nav-Item')
          getNavItemsArray.forEach(i => i.addEventListener('click',  selectPage))
+        
        }, [])
+       useEffect(() => {
+          let navmenu = document.querySelectorAll('#Menu-Nav-Item')
+           navmenu.forEach(i => i.addEventListener('click', function () {
+                console.log('run')
+                setMenuOpen(!menuOpen)
+           }))         
+
+       } , [menuOpen])
 
 
  const Menu = () => {
@@ -35,10 +44,10 @@ export const Header = () => {
                     <img  alt='open menu' id='Menu-Icon' onClick={e => setMenuOpen(!menuOpen)}  src={menu} />)
             }          
            {menuOpen &&  <nav id='Menu-Nav' >
-             <a href='/'id='Menu-Nav-Item' >Compras</a>
-             <a href='/'id='Menu-Nav-Item' >Catálogo</a>
-             <a href='/'id='Menu-Nav-Item' >Sobre</a>
-             <a href='/'id='Menu-Nav-Item' >Contato</a>
+             <Link to='/'id='Menu-Nav-Item'>Compras</Link>
+             <Link to='/Catálogo'id='Menu-Nav-Item' >Catálogo</Link>
+             <Link to='/'id='Menu-Nav-Item' >Sobre</Link>
+             <Link to='/'id='Menu-Nav-Item' >Contato</Link>
              </nav>}  
                     
            </>
@@ -48,13 +57,18 @@ export const Header = () => {
     return (
          <div id='Header'>
               <nav id='Header-Nav' >
-                   <a href='/'id='Nav-Item' className='Selected' >Compras</a>
-                   <a href='/'id='Nav-Item' >Catálogo</a>
-                   <a href='/'id='Nav-Item' >Sobre</a>
-                   <a href='/'id='Nav-Item' >Contato</a>
+                   <Link to='/'id='Nav-Item' className='Selected' >Compras</Link>
+                   <Link to='/Catálogo'id='Nav-Item' >Catálogo</Link>
+                   <Link to='/'id='Nav-Item' >Sobre</Link>
+                   <Link to='/'id='Nav-Item' >Contato</Link>
               </nav>
               <Menu/>
-               <div id='Logo' ><a  href='/' >Alameda </a></div>
+               <div id='Logo' >
+                    <Link to='/' onClick={e => {
+                    getNavItemsArray.forEach(i => i.classList.remove('Selected'))
+                    getNavItemsArray[0].classList.add('Selected') }}
+                     to='/' >Alameda</Link>
+               </div>
               <div id='Header-icons' >
                    
                    <img alt='instagrm' id='Header-Icon-instagram' src={instagram} />

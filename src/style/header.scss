@@ -8,6 +8,7 @@
     justify-content: space-around;
 }
 
+
 #Header-Nav {
       display: none;  
      
@@ -89,9 +90,9 @@ align-items: center;
     justify-content: center;
     align-items: center;
     bottom: 0;
-    height: 80%;
+    height: 100%;
     background-color: white;
-    z-index: 1000;
+    z-index: 8;
  
 }
 
@@ -112,6 +113,19 @@ align-items: center;
     cursor: pointer; 
 }
 
+@media screen and (max-width:900px)  {
+   
+    #Logo {
+         z-index: 100;
+    }
+
+    #Menu-Icon-x  {
+        z-index: 100;
+    }
+    #Header-Icon-Cart {
+        z-index: 100;
+    }
+}
 
 @media screen and (min-width:900px) {
 

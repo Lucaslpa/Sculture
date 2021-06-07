@@ -5,7 +5,7 @@ import instagram from '../../../assets/instagram.svg'
 export const Footer = () => {
     return (
        <footer id='Footer' >
-           <span id='Catálogo' >Catálogo 2021</span>
+           <span id='Catálogo-link' >Catálogo 2021</span>
            <div id='Footer-Media' >
                <img alt='instagram' src={instagram}/>
                <img src={twitter}/>
