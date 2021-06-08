@@ -499,5 +499,40 @@ body, html {
     max-width: 400px;
   }
 }
+#Sobre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Sobre img {
+  padding: 10px 0;
+}
+
+#Sobre div {
+  padding: 20px;
+}
+
+#Sobre div * {
+  margin: 10px 0;
+}
+
+#Sobre div h4 {
+  font-size: calc(0.7em + 1vw);
+}
+
+@media screen and (min-width: 650px) {
+  #Sobre div {
+    width: 100%;
+    max-width: 600px;
+    padding: 0;
+  }
+
+  #Sobre img {
+    width: 100%;
+    max-width: 600px;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */

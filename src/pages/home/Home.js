@@ -2,7 +2,8 @@ import {Header} from './components/header'
 import {Footer} from './components/footer'
 import {Compras} from '../compras/Compras'
 import {Catálogo} from '../catálogos/Catálogo'
-
+import {Sobre} from '../sobre/Sobre'
+import {Contato} from '../contato/Contato'
 import {
      BrowserRouter as Router,
      Switch,
@@ -16,10 +17,16 @@ export const Home = () => {
               <Header/>
               <Switch>
                    <Route exact path='/'>
-                   <Compras/>
+                     <Compras/>
                    </Route>
                    <Route path='/Catálogo' >
-                   <Catálogo/>
+                      <Catálogo/>
+                   </Route>
+                   <Route path='/Sobre' >
+                      <Sobre/>
+                   </Route>
+                   <Route path='/Contato' >
+                          <Contato/>
                    </Route>
               </Switch> 
           

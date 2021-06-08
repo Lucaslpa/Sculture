@@ -19,7 +19,6 @@ export const Header = () => {
            getNavItemsArray.forEach(i => i.classList.remove('Selected'))
            this.classList.add('Selected')
       }
-
        useEffect(()=> {
          getNavItemsArray = document.querySelectorAll('#Nav-Item')
          getNavItemsArray.forEach(i => i.addEventListener('click',  selectPage))
@@ -46,8 +45,8 @@ export const Header = () => {
            {menuOpen &&  <nav id='Menu-Nav' >
              <Link to='/'id='Menu-Nav-Item'>Compras</Link>
              <Link to='/Catálogo'id='Menu-Nav-Item' >Catálogo</Link>
-             <Link to='/'id='Menu-Nav-Item' >Sobre</Link>
-             <Link to='/'id='Menu-Nav-Item' >Contato</Link>
+             <Link to='/Sobre'id='Menu-Nav-Item' >Sobre</Link>
+             <Link to='/Contato'id='Menu-Nav-Item' >Contato</Link>
              </nav>}  
                     
            </>
@@ -59,8 +58,8 @@ export const Header = () => {
               <nav id='Header-Nav' >
                    <Link to='/'id='Nav-Item' className='Selected' >Compras</Link>
                    <Link to='/Catálogo'id='Nav-Item' >Catálogo</Link>
-                   <Link to='/'id='Nav-Item' >Sobre</Link>
-                   <Link to='/'id='Nav-Item' >Contato</Link>
+                   <Link to='/Sobre'id='Nav-Item' >Sobre</Link>
+                   <Link to='/Contato'id='Nav-Item' >Contato</Link>
               </nav>
               <Menu/>
                <div id='Logo' >
@@ -70,7 +69,6 @@ export const Header = () => {
                      to='/' >Alameda</Link>
                </div>
               <div id='Header-icons' >
-                   
                    <img alt='instagrm' id='Header-Icon-instagram' src={instagram} />
                    <img alt='twitter' id='Header-Icon-twitter' src={twitter}/>
                    <div id='Header-Icon-Cart' >
