@@ -9,7 +9,7 @@ import {
      Switch,
      Route,
    } from "react-router-dom";
-
+import {clothesArray} from './comprasExample'
 
 export const Home = () => {
      return (
@@ -17,7 +17,7 @@ export const Home = () => {
               <Header/>
               <Switch>
                    <Route exact path='/'>
-                     <Compras/>
+                     <Compras clothes={clothesArray} />
                    </Route>
                    <Route path='/Catálogo' >
                       <Catálogo/>

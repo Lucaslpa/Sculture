@@ -27,7 +27,6 @@ export const Header = () => {
        useEffect(() => {
           let navmenu = document.querySelectorAll('#Menu-Nav-Item')
            navmenu.forEach(i => i.addEventListener('click', function () {
-                console.log('run')
                 setMenuOpen(!menuOpen)
            }))         
 
