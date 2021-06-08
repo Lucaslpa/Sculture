@@ -4,6 +4,7 @@ import {Compras} from '../compras/Compras'
 import {Catálogo} from '../catálogos/Catálogo'
 import {Sobre} from '../sobre/Sobre'
 import {Contato} from '../contato/Contato'
+import {ProductViews} from '../productview/ProductView'
 import {
      BrowserRouter as Router,
      Switch,
@@ -16,7 +17,7 @@ export const Home = () => {
           <Router>
               <Header/>
               <Switch>
-                   <Route exact path='/'>
+                   <Route exact path='/compras'>
                      <Compras clothes={clothesArray} />
                    </Route>
                    <Route path='/Catálogo' >
@@ -27,6 +28,9 @@ export const Home = () => {
                    </Route>
                    <Route path='/Contato' >
                           <Contato/>
+                   </Route>
+                   <Route exact path='/' >
+                          <ProductViews  clothe={clothesArray[5]} CouldLike={[clothesArray[5],clothesArray[1],clothesArray[6]]} />
                    </Route>
               </Switch> 
           

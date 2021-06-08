@@ -1,62 +1,41 @@
 @import './color.scss';
-
 #Compras {
       padding: 10px 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      
-}
-
+      align-items: center;}
 #Category { 
      width: 100%;
      padding: 30px 0 ; 
-     display: flex;
-}
-
+     display: flex;}
 #Category li { 
       margin: 0 5px;
-      list-style-type: none;
-      
-
-      
-}
-
+      list-style-type: none;}
 #Category li a {
      display: flex;
      text-decoration: none;
      color: $blackColor;
-     white-space: nowrap;
-}
-
-
+     white-space: nowrap;}
 #Clothe-section {
     display: flex;
      flex-direction: column;
      align-items: center;
-     width: 100%;
-}
-
+     width: 100%;}
 #Clothe { 
      width: 85%;
      margin: 20px 0 ;
      display: flex;
      flex-direction: column;
      position: relative;
-     max-width: 330px;
-     
-}
+     max-width: 330px;}
 #Clothe-title {
      font-weight: 600;
      font-size: calc(1em + 1vw);
     line-height: calc(1.2em + 1vw);
-    margin: 10px 0;
-}
+    margin: 10px 0;}
 #Clothe-price {
     font-size: calc(1em + 1vw);
-    line-height: calc(1.0em + 1vw)
-}
-
+    line-height: calc(1.0em + 1vw)}
 #Clothe-hover {
       position: absolute;
       height: 90%;
@@ -64,9 +43,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-     opacity: 0;
-}
-
+     opacity: 0;}
 #Clothe-hover a {
       color: white;
       height: 50px;
@@ -78,10 +55,7 @@
       font-size: 14px;
       transition: 2s;
       text-decoration: none;
-      z-index: 2;
-
-}
-
+      z-index: 2;}
 #imgandhover {
      height: 100%;
      display: flex;
@@ -91,23 +65,13 @@
      cursor: pointer;
      &:hover {
           #imgandhover img {
-               transform: scale(1.5);
-          }
-     }
-}
-
+               transform: scale(1.5);}}}
 #imgandhover img  {
-      width: 100%;
-      
-}
-
+      width: 100%;}
 .scale {
      transition: 0.2s;
-     transform: scale(1.2);
-}
-
+     transform: scale(1.2);}
 @media screen and(min-width: 700px) and (max-width: 1000px) {
- 
 #Clothe-section {
      display: grid;
      grid-template-columns: 33% 33% 33% ;
@@ -116,15 +80,8 @@
      justify-content: center;
      column-gap: 10px;
       width: 100%;
-      padding: 0 20px;
- }
-
-
-
-}
-
+      padding: 0 20px;}}
 @media screen and(min-width: 700px) and (max-width: 1000px) {
- 
      #Clothe-section {
           display: grid;
           grid-template-columns: 33% 33% 33%;
@@ -133,45 +90,26 @@
           justify-content: center;
            width: 100%;
            padding:50px 20px;
-           border-top: solid 1px rgb(187, 187, 187);
-      }
-
+           border-top: solid 1px rgb(187, 187, 187);}
       #Clothe {
           margin: 0;
           height: calc(200px + 20vw);
-          width: 95%;
-    }
-
-
-}
-
-
+          width: 95%;}}
 @media screen and(min-width: 700px) {
   #Clothe-hover {
         transition: 0.5s;
      &:hover {
-          opacity: 1;
-     }
-   }
-
+          opacity: 1;}}
    #Clothe {
      max-height: 430px;
-     max-width: 270px;
-
-}
-
+     max-width: 270px;}
 #Clothe-title  {
      margin: 0;
      font-size: calc(0.8em + 0.5vw);
-     line-height: calc(1.2em + 1vw);
-}
-
+     line-height: calc(1.2em + 1vw);}
 #Clothe-price {
      font-size: calc(0.6em + 0.5vw);
-     line-height: calc(0.5em + 1vw);
-}
-}
-
+     line-height: calc(0.5em + 1vw);}}
 @media screen and (min-width: 1000px)  {
      #Clothe-section {
           display: grid;
@@ -181,52 +119,27 @@
           justify-content: center;
            width: 100%;
            padding:50px 20px;
-           border-top: solid 1px rgb(187, 187, 187);
-      }
-
+           border-top: solid 1px rgb(187, 187, 187);}
       #Clothe {
           margin: 0;
           height: calc(200px + 20vw);
-          width: 95%;
-    }
-
-
+          width: 95%;}
     #Category { 
      width: 100%;
      padding-bottom: 80px; 
      display: flex;
      justify-content: center;
-     overflow-x: hidden;
-     
-
-}
-
+     overflow-x: hidden;}
 #Clothe {
      max-height: 430px;
-     max-width: 270px;
-
-}
-
+     max-width: 270px;}
 #Clothe-title  {
      margin: 0;
      font-size: calc(0.8em + 0.5vw);
-     line-height: calc(1.2em + 1vw);
-}
-
+     line-height: calc(1.2em + 1vw);}
 #Clothe-price {
      font-size: calc(0.6em + 0.5vw);
-     line-height: calc(0.5em + 1vw);
-}
-}
-
-
-
+     line-height: calc(0.5em + 1vw);}}
 @media screen and (max-width: 300px)  {
-
-     #Category { 
-       
-          overflow-x: scroll;
-     
-     
-     }
-}
+     #Category {    
+          overflow-x: scroll;}}

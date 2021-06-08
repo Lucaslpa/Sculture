@@ -1,13 +1,9 @@
 import {useEffect} from 'react'
-
+import {removeCatálogoElement} from '../functions'
 export const Sobre = () => {
 
     useEffect(() => {
-       const catalogo = document.getElementById('Catálogo-link')
-       const media = document.getElementById('Footer-Media')
-       media.style.marginTop = '70px'
-       catalogo.style.display = 'none'
-
+       removeCatálogoElement()
     }, [])
      
     return (

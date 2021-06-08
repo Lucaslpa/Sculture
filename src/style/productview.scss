@@ -1,0 +1,152 @@
+#Paths { 
+     height: 100px;
+     width: 100%;
+     padding: 30px;
+
+}
+
+#Paths a {
+     text-decoration: none;
+     color: black;
+}
+
+#Clothe-information { 
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0 30px;
+}
+
+#Clothe-information img {
+     width: 60%;
+     max-width: 500px;
+     height: 70vw;
+     max-height: 650px;
+}
+#InformationResponsive {
+     display: none;
+     @extend #Information
+}
+
+#Information { 
+    width: 100%;
+    height: auto;
+    min-width: 360px;
+    max-width: 500px;
+    padding: 0 30px;
+    & * { 
+        margin: 18px 0;
+    }
+    & h4, legend {
+        font-size: calc(1em + 0.7vw);
+        
+    }
+    & button {
+            cursor: pointer;
+            height: 60px;
+            outline: none;
+            width: 80%;
+            border: none;
+            transition: 0.3s;
+            font-size: 15px;
+            background-color: rgb(143, 143, 143);
+            color: white;
+            &:hover {
+                background-color: rgb(112, 112, 112);
+            }
+    }
+}
+
+#Information-title {
+     font-size: calc(1em + 1.2vw);
+}
+
+#Information-Price  { 
+     font-size: 20px;
+     
+}
+
+#Details ul {
+     margin-left: 40px;
+}
+
+#Select fieldset {
+     border: none;
+     * legend {
+         font-weight: 900;
+     }
+     & select {
+         height: 50px;
+         outline: none;
+         width: 80%;
+     }
+}
+
+#Quantity input {
+    height: 50px;
+    outline: none;
+    width: 15%;
+    display: flex;
+ padding: 10px;
+}
+
+#CouldLike {
+   margin-top:100px ;
+   padding: 0 40px;
+   & h3 {
+    font-size: calc(1em + 1.4vw);
+
+   }
+}
+
+@media screen and (max-width: 830px) {
+    #Clothe-information { 
+        justify-content: space-between;
+
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 700px)  {
+    #CouldLike {
+        & h3 {
+         font-size: calc(1em + 1.4vw);
+         margin: 20px 0; 
+        }
+     }
+    #Information-title {
+        font-size: calc(1.2em + 1.7vw);
+   }
+#Clothe-information { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Information {
+    display: none;
+}
+
+#InformationResponsive { 
+    display: block;
+    width: 100%;
+    height: auto;
+    min-width: 0px;
+    max-width: none;
+    padding: 0 30px; 
+    & h4, legend {
+        font-size:calc(1em + 1vw);
+        
+    }
+    
+    & button {
+        width: 100%;
+        font-size: calc(1em + 1vw);
+    }
+}
+#Select fieldset {
+    width: 100%;
+    & select {
+        width: 100%;
+    }
+}
+}

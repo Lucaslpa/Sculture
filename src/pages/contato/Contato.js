@@ -1,4 +1,5 @@
 import {useEffect} from 'react'
+import {removeCatálogoElement} from '../functions'
 
 
 
@@ -7,11 +8,7 @@ export const Contato =  () => {
 
 
     useEffect(() => {
-        const catalogo = document.getElementById('Catálogo-link')
-        const media = document.getElementById('Footer-Media')
-        media.style.marginTop = '70px'
-        catalogo.style.display = 'none'
- 
+      removeCatálogoElement()
      }, [])
     return ( 
         <main id='Contato' >
