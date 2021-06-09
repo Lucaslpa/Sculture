@@ -1,6 +1,8 @@
-import { clothesArray } from '../../home/comprasExample'
 import {InformationResponsive} from './InformationResponsive'
+import {addClotheToCartInLocalStorage} from '../function'
 export const Information = ({clothe}) => {
+
+    
     return (
        <div id='Clothe-information' >
        <img src={clothe.link} ></img>
@@ -46,7 +48,7 @@ export const Information = ({clothe}) => {
                  <h4>Quantidade</h4>
                  <input min='1' type='number' defaultValue='1' />
            </div>
-           <button>Adicionar ao carrinho</button>
+           <button onClick={e => addClotheToCartInLocalStorage(clothe)} >Adicionar ao carrinho</button>
        </div>
        </div>
     )
