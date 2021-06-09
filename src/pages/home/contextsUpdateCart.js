@@ -10,12 +10,14 @@ export const updateCartContext =  createContext()
 
 
 export const UpdateCartContext = (props) => { 
-       const [NumberInArray, setNumberInArray] = useState(getNumberOfItemsInArrayLocalStorage())
-       useEffect(() => console.log(getNumberOfItemsInArrayLocalStorage()) , [setNumberInArray])
-      
+       const [NumberInArray, setNumberInArray] = useState()
+       
        function getNumberInArray() {
-            setNumberInArray(getNumberOfItemsInArrayLocalStorage())
+           const number = getNumberOfItemsInArrayLocalStorage()
+            setNumberInArray(number)
        }
+
+       useEffect(()=> getNumberInArray() ,[])
      
     return ( 
          <updateCartContext.Provider value={{NumberInArray, getNumberInArray}} >

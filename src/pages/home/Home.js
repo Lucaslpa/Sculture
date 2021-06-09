@@ -34,9 +34,9 @@ export const Home = () => {
               <Switch>
                    <Route exact path='/'>
                      <Compras  setClothe={setItemClothe} clothes={clothesArray} />
+                   </Route>
                    <Route path='/Cart'>
                           <Cart cartArray={[clothesArray[5],clothesArray[6],clothesArray[2],clothesArray[3]]}/>
-                   </Route>
                    </Route>
                    <Route path='/Catálogo' >
                       <Catálogo/>

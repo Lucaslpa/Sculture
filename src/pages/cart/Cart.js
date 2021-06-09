@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import {removeCatálogoElement} from '../functions'
 import {DeleteItemFromClothesLocalStorage,getItemsArrayFromLocalStorage,getSubTotal} from './function'
- 
+import {updateCartContext} from '../home/contextsUpdateCart' 
+
+
 export const Cart = () => { 
          const [SubTotal, setSubTotal] = useState(0)
          const [CartArray, setCartArray] = useState([])
+         const {getNumberInArray} = useContext(updateCartContext)
 
   useEffect(() => {
      removeCatálogoElement()
@@ -20,6 +23,7 @@ export const Cart = () => {
                  <button onClick={e => {
                        DeleteItemFromClothesLocalStorage(Item.id)
                        getItemsArrayFromLocalStorage(setCartArray)
+                       getNumberInArray()
                  }} >X</button>
                  <img  src={Item.link}></img>    
                  </div >

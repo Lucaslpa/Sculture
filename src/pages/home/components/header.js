@@ -15,6 +15,7 @@ export const Header = () => {
       const [menuOpen, setMenuOpen] = useState(false)
       
       const {NumberInArray, setNumberInArray} =  useContext(updateCartContext)
+      useEffect(() => console.log('header:', NumberInArray) , [NumberInArray])
       
 
       function selectPage(e) {
@@ -65,6 +66,9 @@ export const Header = () => {
               <Menu/>
                <div id='Logo' >
                     <Link to='/' onClick={e => {
+                     if(window.innerWidth < 900) {
+                          return
+                     }    
                     getNavItemsArray.forEach(i => i.classList.remove('Selected'))
                     getNavItemsArray[0].classList.add('Selected') }}
                      to='/' >Alameda</Link>
