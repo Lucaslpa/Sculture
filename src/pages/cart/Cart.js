@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react"
 import {removeCatálogoElement} from '../functions'
-
-
+import {DeleteItemFromClothesLocalStorage,getItemsArrayFromLocalStorage,getSubTotal} from './function'
  
-export const Cart = ({cartArray}) => { 
+export const Cart = () => { 
          const [SubTotal, setSubTotal] = useState(0)
+         const [CartArray, setCartArray] = useState([])
 
   useEffect(() => {
      removeCatálogoElement()
+    getItemsArrayFromLocalStorage(setCartArray)
+    getSubTotal(setSubTotal)
 
   }, [])
 
  const ItemCart = ({Item}) => { 
        return ( 
-            <div id='Cart-Item'> 
+            <div  key={Item.id} id='Cart-Item'> 
                  <div id='Cart-Item-info'>
-                 <button>X</button>
+                 <button onClick={e => {
+                       DeleteItemFromClothesLocalStorage(Item.id)
+                       getItemsArrayFromLocalStorage(setCartArray)
+                 }} >X</button>
                  <img  src={Item.link}></img>    
                  </div >
                  <div id='ajust-title' >
@@ -43,8 +48,8 @@ export const Cart = ({cartArray}) => {
      return ( 
           <div id='Cart'>
               <h3>CARRINHO DE COMPRAS</h3>
-               {cartArray && cartArray.map( item => (
-                    <ItemCart Item={item} />
+               {CartArray && CartArray.map( item => (
+                    <ItemCart  Item={item} />
                )
                )}
                <div id='SubTotal' >
