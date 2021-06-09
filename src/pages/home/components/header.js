@@ -3,9 +3,9 @@ import instagram from '../../../assets/instagram.svg'
 import twitter from '../../../assets/twitter.svg'
 import menu from '../../../assets/menu.svg'
 import x from '../../../assets/letra-x.svg'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import {Link} from 'react-router-dom'
-
+import {updateCartContext} from '../../home/contextsUpdateCart'
 
 
 
@@ -13,6 +13,8 @@ import {Link} from 'react-router-dom'
 export const Header = () => {
       var getNavItemsArray 
       const [menuOpen, setMenuOpen] = useState(false)
+      
+      const {NumberInArray, setNumberInArray} =  useContext(updateCartContext)
       
 
       function selectPage(e) {
@@ -29,8 +31,8 @@ export const Header = () => {
            navmenu.forEach(i => i.addEventListener('click', function () {
                 setMenuOpen(!menuOpen)
            }))         
-
        } , [menuOpen])
+       
 
 
  const Menu = () => {
@@ -72,7 +74,7 @@ export const Header = () => {
                    <img alt='twitter' id='Header-Icon-twitter' src={twitter}/>
                    <Link to='/Cart' style={{textDecoration: 'none'}} id='Header-Icon-Cart'  >
                        <img alt='cart' src={cart}/> 
-                       <span>0</span>
+                       <span>{NumberInArray}</span>
                    </Link>
                </div>
          </div>

@@ -1,12 +1,13 @@
-import {useEffect} from 'react'
+import {useEffect, useContext} from 'react'
 import {Information} from './components/Information'
 import {Link} from 'react-router-dom'
 import {removeCatálogoElement} from '../functions'
 import {Clothe} from '../compras/components/Clothe'
 import {controlScaleImgItemClothe} from '../compras/functions'
 
-
 export const ProductViews = ({clothe, CouldLike})  => {
+
+
 
     useEffect(() => {
         removeCatálogoElement()

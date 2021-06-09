@@ -1,8 +1,15 @@
+import {useContext} from 'react'
 import {addClotheToCartInLocalStorage} from '../function'
+import {} from '../../home/function'
+import {updateCartContext} from '../../home/contextsUpdateCart'
 
 
 
 export const InformationResponsive =  ({clothe}) => {
+
+    const {NumberInArray, getNumberInArray} = useContext(updateCartContext)  
+
+
     return (
      
        <div id='InformationResponsive'>
@@ -36,7 +43,10 @@ export const InformationResponsive =  ({clothe}) => {
                  <h4>Quantidade</h4>
                  <input min='1' type='number' defaultValue='1' />
            </div>
-           <button onClick={e => addClotheToCartInLocalStorage(clothe)}>Adicionar ao carrinho</button>
+           <button onClick={e => {
+               addClotheToCartInLocalStorage(clothe)
+               getNumberInArray()
+           }}>Adicionar ao carrinho</button>
            <div id='Description' >
                   <h4>Descrição</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
