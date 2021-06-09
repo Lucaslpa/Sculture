@@ -799,5 +799,166 @@ body, html {
     width: 100%;
   }
 }
+#Cart {
+  padding: 20px 10%;
+}
+
+#Cart-Item {
+  border-bottom: solid 0.5px #f3f3f3;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#Cart-Item input {
+  height: 40px;
+  width: 50px;
+  padding: 10px;
+  overflow: hidden;
+  outline: none;
+}
+
+#Cart-Item-info {
+  display: flex;
+  align-items: center;
+}
+#Cart-Item-info button {
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+#Cart-Item-info button:hover {
+  transform: scale(1.2);
+}
+#Cart-Item-info img {
+  width: calc(4em + 1vw);
+  margin: 0 20px;
+}
+
+#Cart-Item-Prices {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+#Cart-Item-Prices * {
+  margin: 0 6px;
+}
+
+#span-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  font-size: 16px;
+}
+
+#SubTotal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+#SubTotal span {
+  align-items: flex-end;
+  font-size: calc(1em + 1vw);
+  flex-wrap: nowrap;
+}
+#SubTotal button {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #383838;
+}
+#SubTotal button:hover {
+  background-color: #5a5a5a;
+}
+
+#ajust-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#quantityandprice {
+  display: flex;
+  margin: 10px 20px;
+}
+
+@media screen and (max-width: 661px) {
+  #Cart {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #Cart h3 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: calc(1em + 1vw);
+  }
+
+  #ajust-title {
+    display: block;
+  }
+  #ajust-title strong {
+    margin: 10px;
+  }
+
+  #Cart-Item-Prices {
+    font-size: 14px;
+  }
+  #Cart-Item-Prices * {
+    margin: 1px;
+  }
+
+  #span-price {
+    font-size: 14px;
+  }
+
+  #ajust-title {
+    width: auto;
+  }
+
+  #SubTotal {
+    margin-right: 10%;
+  }
+}
+@media screen and (max-width: 346px) {
+  #ajust-title {
+    display: block;
+  }
+  #ajust-title strong {
+    margin: 0;
+  }
+
+  #Cart {
+    padding: 20px 1%;
+  }
+
+  #Cart-Item-info img {
+    width: calc(2em + 1vw);
+    margin-left: 10px;
+  }
+
+  #quantityandprice {
+    margin: 10px 0px;
+  }
+
+  #Cart-Item-Prices {
+    font-size: 13px;
+  }
+
+  #span-price {
+    font-size: 13px;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */

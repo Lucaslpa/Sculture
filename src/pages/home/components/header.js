@@ -70,10 +70,10 @@ export const Header = () => {
               <div id='Header-icons' >
                    <img alt='instagrm' id='Header-Icon-instagram' src={instagram} />
                    <img alt='twitter' id='Header-Icon-twitter' src={twitter}/>
-                   <div id='Header-Icon-Cart' >
+                   <Link to='/Cart' style={{textDecoration: 'none'}} id='Header-Icon-Cart'  >
                        <img alt='cart' src={cart}/> 
                        <span>0</span>
-                   </div>
+                   </Link>
                </div>
          </div>
     )

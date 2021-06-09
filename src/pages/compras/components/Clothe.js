@@ -1,9 +1,16 @@
+import {Link} from 'react-router-dom'
 
-export const Clothe = ({clothe}) => { 
+
+export const Clothe = ({clothe, setClothe}) => { 
     return ( <div id='Clothe'> 
                 <div id='imgandhover'> 
                    <img alt='clothe' id='imgtoscale' src={clothe.link}/>
-                   <div id='Clothe-hover' > <a href='/' >VISUALIZAÇÃO RÁPIDA</a> </div>
+                   <Link id='Clothe-hover'
+                    to='/ProductView'
+                    style={{textDecoration:'none'}}
+                    onClick={e => setClothe(clothe.id-1)}
+                   > <a href='/' 
+                   >VISUALIZAÇÃO RÁPIDA</a> </Link>
                  </div>
                    <div id='Clothe-title' >{clothe.title}</div>
                    {clothe.promotion ? (

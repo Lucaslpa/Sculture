@@ -18,7 +18,7 @@ export const ProductViews = ({clothe, CouldLike})  => {
     return(
             <section>
             <div id='Paths'>
-                   <Link>Compras</Link> {'>'} { clothe && clothe.title}
+                   <Link to='/' >Compras</Link> {'>'} { clothe && clothe.title}
             </div>
             <Information clothe={clothe} />
             
