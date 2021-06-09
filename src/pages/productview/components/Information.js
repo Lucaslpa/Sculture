@@ -1,8 +1,14 @@
+import {useContext, useState} from 'react'
 import {InformationResponsive} from './InformationResponsive'
 import {addClotheToCartInLocalStorage} from '../function'
-export const Information = ({clothe}) => {
+import {updateCartContext} from '../../home/contextsUpdateCart'
 
-    
+
+export const Information = ({clothe}) => {
+    const [quantityValue, setQuantityValue] = useState(1)
+
+    const {getNumberInArray} = useContext(updateCartContext)  
+
     return (
        <div id='Clothe-information' >
        <img src={clothe.link} ></img>
@@ -46,9 +52,14 @@ export const Information = ({clothe}) => {
            </div>
            <div id='Quantity'>
                  <h4>Quantidade</h4>
-                 <input min='1' type='number' defaultValue='1' />
+                 <input min='1' type='number' value={quantityValue} 
+                  onChange={e => setQuantityValue(parseInt(e.target.value))}
+                 />
            </div>
-           <button onClick={e => addClotheToCartInLocalStorage(clothe)} >Adicionar ao carrinho</button>
+           <button onClick={e => {
+               addClotheToCartInLocalStorage({...clothe, quantity: parseInt(quantityValue)})
+               getNumberInArray()
+           }} >Adicionar ao carrinho</button>
        </div>
        </div>
     )

@@ -15,20 +15,36 @@ export function getSubTotal(setState) {
     const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
    const prices =  cartItemsArray.map(item => {
          if(item.promotion) {
-             return item.promotion
+             return item.promotion * item.quantity
          } else {
-              return item.price
+              return item.price * item.quantity
          }
     })
 
     if(prices.length > 1) {
          const sum = prices.reduce((previeus, current) => previeus + current)
          setState(sum)
-         console.log(sum)
     } else {
          setState(prices[0])
     }
   
-  console.log(prices)
 
 }
+
+export function updateItemClotheInArray(array, setArray ,id, itemToUpdate, value) {
+    
+         
+    
+    
+    
+    const newArray = array.map(item => {
+        if(item.id === id) {
+            item[itemToUpdate] = value
+            console.log('anterior', item.price, item.quantity)
+            return item
+        }else  return item
+    } )
+       setArray([...newArray])
+       localStorage.setItem("clothes", JSON.stringify([...newArray]))
+     
+  }

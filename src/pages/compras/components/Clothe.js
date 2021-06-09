@@ -8,7 +8,11 @@ export const Clothe = ({clothe, setClothe}) => {
                    <Link id='Clothe-hover'
                     to='/ProductView'
                     style={{textDecoration:'none'}}
-                    onClick={e => setClothe(clothe.id-1)}
+                    onClick={e => {
+                      setClothe(clothe.id-1)
+                      document.body.scrollTop = 0
+                    }} 
+                    
                    > <a href='/' 
                    >VISUALIZAÇÃO RÁPIDA</a> </Link>
                  </div>
