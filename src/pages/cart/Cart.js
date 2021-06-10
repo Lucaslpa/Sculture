@@ -9,7 +9,6 @@ export const Cart = () => {
          const [SubTotal, setSubTotal] = useState(0)
          const [CartArray, setCartArray] = useState([])
          const {getNumberInArray} = useContext(updateCartContext)
-         const [value, setValue] = useState(1)
          
          
   useEffect(() => {
@@ -32,6 +31,7 @@ export const Cart = () => {
                           DeleteItemFromClothesLocalStorage(Item.id)
                           getItemsArrayFromLocalStorage(setCartArray)
                           getNumberInArray()
+                          getSubTotal(setSubTotal)
                     }} >X</button>
                     <img  src={Item.link}></img>    
                     </div >
@@ -40,7 +40,7 @@ export const Cart = () => {
    
                      <div id='quantityandprice' >
                      <input min='1' type='number' value={Item.quantity} onChange={e =>{
-                          updateItemClotheInArray(CartArray,setValue,Item.id, 'quantity', parseInt(e.target.value))
+                          updateItemClotheInArray(CartArray,setCartArray,Item.id, 'quantity', parseInt(e.target.value))
                           getSubTotal(setSubTotal)
 
                          } }
@@ -62,7 +62,7 @@ export const Cart = () => {
                )
                )}
                <div id='SubTotal' >
-                    <span>Total R$ {Math.round(SubTotal)}</span>
+                    <span>Total R$ {Math.round(!SubTotal  ? 0 : SubTotal)}</span>
                     <button>COMPRAR</button>
                </div>
           </div>
