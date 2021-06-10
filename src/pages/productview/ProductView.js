@@ -5,7 +5,7 @@ import {removeCatálogoElement} from '../functions'
 import {Clothe} from '../compras/components/Clothe'
 import {controlScaleImgItemClothe} from '../compras/functions'
 
-export const ProductViews = ({clothe, CouldLike})  => {
+export const ProductViews = ({clothe, CouldLike, setProductOfView})  => {
 
 
 
@@ -27,7 +27,7 @@ export const ProductViews = ({clothe, CouldLike})  => {
                   <h3 id='CouldLike-title' >Você também pode gostar</h3>
               <div id='Clothe-section' style={{border: 'none'}} >
                 
-                {CouldLike && CouldLike.map(clothe => <Clothe clothe={clothe} />)}
+                {CouldLike && CouldLike.map(clothe => <Clothe setProductOfView={setProductOfView} clothe={clothe} />)}
                </div>
               </div>
             </section>
