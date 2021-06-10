@@ -48,7 +48,7 @@ export const Home = () => {
                           <Contato/>
                    </Route>
                    <Route exact path='/ProductView' >
-                          <ProductViews   clothe={clothesArray[itemClothe]} CouldLike={[clothesArray[5],clothesArray[1],clothesArray[6]]} />
+                          <ProductViews   clothe={clothesArray.filter(item => item.id === itemClothe)[0]} CouldLike={[clothesArray[5],clothesArray[1],clothesArray[6]]} />
                    </Route>
                    
               </Switch>       

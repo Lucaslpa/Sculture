@@ -15,7 +15,7 @@ useEffect(() => {
           <section id='Compras' > 
                <Category clothes={clothes} setRoupas={setRoupas} />
                <div id='Clothe-section'>
-                {roupas && roupas.map(clothe => <Clothe setClothe={setClothe} clothe={clothe} />)}
+                {roupas && roupas.map(clothe => <Clothe setProductOfView={setClothe} clothe={clothe} />)}
                </div>
           </section>
     )

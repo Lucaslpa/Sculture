@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 
 
-export const Clothe = ({clothe, setClothe}) => { 
+export const Clothe = ({clothe, setProductOfView}) => { 
     return ( <div id='Clothe'> 
                 <div id='imgandhover'> 
                    <img alt='clothe' id='imgtoscale' src={clothe.link}/>
@@ -9,7 +9,7 @@ export const Clothe = ({clothe, setClothe}) => {
                     to='/ProductView'
                     style={{textDecoration:'none'}}
                     onClick={e => {
-                      setClothe(clothe.id-1)
+                      setProductOfView(clothe.id)
                       document.body.scrollTop = 0
                     }} 
                     
