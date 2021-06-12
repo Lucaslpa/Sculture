@@ -20,7 +20,9 @@ export function getSubTotal(setState) {
               return item.price * item.quantity
          }
     })
-
+    if(!prices.length) {
+        return
+      }
     if(prices.length > 1) {
          const sum = prices.reduce((previeus, current) => previeus + current)
          setState(sum)
