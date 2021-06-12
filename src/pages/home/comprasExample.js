@@ -38,7 +38,7 @@ export const clothesArray = [
 link: 'https://ae01.alicdn.com/kf/HTB1hyGIKVXXXXapXFXXq6xXFXXXB/Mostrar-Z-Store-40-cm-Modelo-GK-ONE-PIECE-Barba-Branca-Edward-Newgate-Figura-Est.jpg_Q90.jpg_.webp',
 price: 500,
 promotion: 430,
-color: false 
+color: true 
 },
 { id: 6, 
 title:'Izuku Midoriya' ,

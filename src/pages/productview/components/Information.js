@@ -18,13 +18,15 @@ export const Information = ({clothe}) => {
            {
               clothe.promotion ? ( 
                   <>
-                  <span id='Information-Price' style={{color: 'rgba(60, 60, 60, 0.4)'}}  ><strike>{clothe.price}</strike></span>
-                  <span id='Information-Price' style={{margin: 20}}  >{clothe.promotion}</span>
+                  <span id='Information-Price' style={{color: 'rgba(60, 60, 60, 0.4)'}}  >
+                      <strike>R$ {clothe.price}</strike>
+                  </span>
+                  <span id='Information-Price' style={{margin: 20}}  >R$ {clothe.promotion}</span>
                   <strong 
                   style={{backgroundColor: 'black', padding: 5, color: 'white'}}
                   >Promoção</strong>
                   </>
-              ) :  <span id='Information-Price' >{clothe.price}</span>
+              ) :  <span id='Information-Price' >R$ {clothe.price}</span>
                       
            }
            <div id='Description' >

@@ -17,7 +17,7 @@ import { useState, createContext, useEffect, useContext } from 'react'
 import {UpdateCartContext} from './contextsUpdateCart'
 
 export const Home = () => {
-   const [itemClothe, setItemClothe] = useState()
+   const [idProductToBeInProductView, setItemClothe] = useState()
     const [QuantityItemsInCart, setQuantityItemsItemsCart] = useState(0)
    const UpdateCartQuantityItems = createContext(QuantityItemsInCart, setQuantityItemsItemsCart)
  
@@ -48,7 +48,10 @@ export const Home = () => {
                           <Contato/>
                    </Route>
                    <Route exact path='/ProductView' >
-                          <ProductViews   clothe={clothesArray.filter(item => item.id === itemClothe)[0]} CouldLike={[clothesArray[5],clothesArray[1],clothesArray[6]]} />
+                      <ProductViews  
+                      setProductOfView={setItemClothe}
+                      clothe={clothesArray.filter(item => item.id === idProductToBeInProductView)[0]} 
+                      CouldLike={[clothesArray[5],clothesArray[1],clothesArray[6]]} />
                    </Route>
                    
               </Switch>       

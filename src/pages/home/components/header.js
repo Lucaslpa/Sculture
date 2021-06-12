@@ -72,7 +72,7 @@ export const Header = () => {
   
                     GetNavItemsArray.forEach(i => i.classList.remove('Selected'))
                     GetNavItemsArray[0].classList.add('Selected') }}
-                     to='/' >Alameda</Link>
+                     to='/' >sculture</Link>
                </div>
               <div id='Header-icons' >
                    <img alt='instagrm' id='Header-Icon-instagram' src={instagram} />

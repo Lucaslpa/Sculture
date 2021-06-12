@@ -10,12 +10,12 @@ export const Category = ({clothes, setRoupas}) => {
                 <li>
                   <a href='/' onClick={(e) => {
                      e.preventDefault()
-                     FilterIgual(clothes,'title', 'Goku', setRoupas)
-                }}>Partes inferiores</a></li>
+                     FilterIgual(clothes,'color', false, setRoupas)
+                }}>Sem cor</a></li>
                 <li><a href='/' onClick={(e) => {
                      e.preventDefault()
-                     FilterIgual(clothes,'title', 'Luffy', setRoupas)
-                }} >Tops</a></li>
+                     FilterIgual(clothes,'color', true, setRoupas)
+                }} >Coloridos</a></li>
                 <li><a href='/' onClick={(e) => {
                      e.preventDefault()
                      FilterExist(clothes,'promotion', setRoupas)
