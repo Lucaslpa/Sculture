@@ -10,6 +10,9 @@ export function getTotalItemsInArrayFromLocalStorage(setState) {
 
 export function getNumberOfItemsInArrayLocalStorage(setState) {
     const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
+    if(!cartItemsArray) {
+        return
+    }
     return cartItemsArray.length
 }
 

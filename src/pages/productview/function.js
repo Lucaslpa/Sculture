@@ -12,6 +12,10 @@ export function addClotheToCartInLocalStorage(clothe) {
   } 
   
   const sameItem = oldArray.filter(item => item.id === clothe.id)
+  if(!sameItem) {
+    return
+  }
+  
   if(sameItem.length > 0) {
         console.log('item já adicioado')
        return 
