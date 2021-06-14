@@ -8,11 +8,17 @@ export function DeleteItemFromClothesLocalStorage(id) {
 
 export function getItemsArrayFromLocalStorage(setState) {
     const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
+     if(!cartItemsArray){
+         return
+     }
     setState(cartItemsArray)
 }
 
 export function getSubTotal(setState) {
     const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
+    if(!cartItemsArray) {
+        return
+    }
    const prices =  cartItemsArray.map(item => {
          if(item.promotion) {
              return item.promotion * item.quantity
@@ -34,9 +40,6 @@ export function getSubTotal(setState) {
 }
 
 export function updateItemClotheInArray(array, setArray ,id, itemToUpdate, value) {
-    
-         
-    
     
     
     const newArray = array.map(item => {
