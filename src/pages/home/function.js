@@ -1,4 +1,3 @@
-import {useEffect, useState, useContext,  createContext} from 'react'
 
 export function getTotalItemsInArrayFromLocalStorage(setState) {
     const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
@@ -6,13 +5,8 @@ export function getTotalItemsInArrayFromLocalStorage(setState) {
         return 
     } else { 
          return setState(cartItemsArray.length)
-
     }
 }
-
-
-
-
 export function getNumberOfItemsInArrayLocalStorage(setState) {
     const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
     if(!cartItemsArray) {

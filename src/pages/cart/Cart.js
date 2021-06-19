@@ -1,48 +1,46 @@
 import { useContext, useEffect, useState } from "react"
 import {removeCatálogoElement} from '../functions'
-import {DeleteItemFromClothesLocalStorage,getItemsArrayFromLocalStorage,getSubTotal,
-updateItemClotheInArray} from './function'
+import {DeleteItemFromClothesLocalStorage, updateQuantity , getInfosCart} from './function'
 import {updateCartContext} from '../home/contextsUpdateCart' 
 
 
 export const Cart = () => { 
          const [SubTotal, setSubTotal] = useState(0)
          const [CartArray, setCartArray] = useState([])
-         const {getNumberInArray} = useContext(updateCartContext)
+         const [CartInfos, setCartInfos] = useState({})
+         const {getNumberInArray} = useContext(updateCartContext)        
          
-         
-  useEffect(() => {
-     removeCatálogoElement()
-    getItemsArrayFromLocalStorage(setCartArray)
-    getSubTotal(setSubTotal)
+         useEffect(() => {
+              removeCatálogoElement()
+              const cartInfos = getInfosCart()
+              setCartInfos(cartInfos)
 
-  }, [])
+              },[])
 
-
-
+              function onClickDeleteItemFromCart(id) {
+               DeleteItemFromClothesLocalStorage(id)
+               const cartInfos = getInfosCart()
+               setCartInfos(cartInfos)
+               getNumberInArray()
+              }
 
      return ( 
           <div id='Cart'>
               <h3>CARRINHO DE COMPRAS</h3>
-               {CartArray && CartArray.map( Item => (
+               {CartInfos.clothesArray && CartInfos.clothesArray.map( Item => (
                     <div  key={Item.id} id='Cart-Item'> 
                     <div id='Cart-Item-info'>
-                    <button onClick={e => {
-                          DeleteItemFromClothesLocalStorage(Item.id)
-                          getItemsArrayFromLocalStorage(setCartArray)
-                          getNumberInArray()
-                          getSubTotal(setSubTotal)
-                    }} >X</button>
-                    <img  src={Item.link}></img>    
+                    <button onClick={e => onClickDeleteItemFromCart(Item.id)} >X</button>
+                    <img alt='Product'  src={Item.link}></img>    
                     </div >
                     <div id='ajust-title' >
                    <strong>{Item.title}</strong>
    
                      <div id='quantityandprice' >
                      <input min='1' type='number' value={Item.quantity} onChange={e =>{
-                          updateItemClotheInArray(CartArray,setCartArray,Item.id, 'quantity', parseInt(e.target.value))
-                          getSubTotal(setSubTotal)
-
+                          updateQuantity(Item.id, e.target.value)
+                         const cartInfos = getInfosCart()
+                         setCartInfos(cartInfos)
                          } }
                      
                     />
@@ -50,10 +48,10 @@ export const Cart = () => {
                            Item.promotion ? (
                                <div id='Cart-Item-Prices' >
                                     
-                               <span style={{color:'rgba(100, 100, 100, 0.6)'}} ><strike>R$ {!Item.quantity ? 0 : Math.round(Item.quantity * Item.price)}</strike></span>
-                               <span>R$ {!Item.quantity ? 0 : Math.round(Item.quantity * Item.promotion)}</span>
+                               <span style={{color:'rgba(100, 100, 100, 0.6)'}} ><strike>R$ {Item.price}</strike></span>
+                               <span>R$ {Item.promotion}</span>
                                </div>
-                           ) : <span id='span-price' > R$ {!Item.quantity ? 0 : Math.round(Item.quantity * Item.price)}</span>
+                           ) : <span id='span-price' > R$ {Item.price}</span>
                       }
                      </div>
                     </div>
@@ -62,7 +60,7 @@ export const Cart = () => {
                )
                )}
                <div id='SubTotal' >
-                    <span>Total R$ {Math.round(!SubTotal  ? 0 : SubTotal)}</span>
+                    <span>Total R$ {CartInfos.subTotal}</span>
                     <button>COMPRAR</button>
                </div>
           </div>

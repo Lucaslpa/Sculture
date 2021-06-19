@@ -8,7 +8,7 @@ export const Footer = () => {
            <span id='Catálogo-link' >Catálogo 2021</span>
            <div id='Footer-Media' >
                <img alt='instagram' src={instagram}/>
-               <img src={twitter}/>
+               <img alt='twitter'  src={twitter}/>
            </div>
            <div id='Footer-newsUpdate'>
            <p >Cadastre-se para receber notícias e atualizações.</p>
