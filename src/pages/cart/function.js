@@ -10,8 +10,6 @@ export function DeleteItemFromClothesLocalStorage(id) {
 export function getInfosCart() {
     const localStorageClothesOfCart = JSON.parse(localStorage.getItem('clothes'))
     if(localStorageClothesOfCart) {
-
-
         return {
             subTotal: getSubTotal(localStorageClothesOfCart),
             clothesArray: convertOriginalArrayToArrayCartFormat(localStorageClothesOfCart)

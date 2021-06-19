@@ -248,10 +248,11 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   opacity: 0;
 }
 
-#Clothe-hover a {
+#Clothe-hover strong {
   color: white;
   height: 50px;
   display: flex;

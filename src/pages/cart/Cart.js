@@ -7,7 +7,7 @@ import {updateCartContext} from '../home/contextsUpdateCart'
 export const Cart = () => { 
          const [SubTotal, setSubTotal] = useState(0)
          const [CartArray, setCartArray] = useState([])
-         const [CartInfos, setCartInfos] = useState({})
+         const [CartInfos, setCartInfos] = useState()
          const {getNumberInArray} = useContext(updateCartContext)        
          
          useEffect(() => {
@@ -27,7 +27,7 @@ export const Cart = () => {
      return ( 
           <div id='Cart'>
               <h3>CARRINHO DE COMPRAS</h3>
-               {CartInfos.clothesArray && CartInfos.clothesArray.map( Item => (
+               {CartInfos && CartInfos.clothesArray.map( Item => (
                     <div  key={Item.id} id='Cart-Item'> 
                     <div id='Cart-Item-info'>
                     <button onClick={e => onClickDeleteItemFromCart(Item.id)} >X</button>
@@ -60,7 +60,7 @@ export const Cart = () => {
                )
                )}
                <div id='SubTotal' >
-                    <span>Total R$ {CartInfos.subTotal}</span>
+                    <span>Total R$ { CartInfos ?  CartInfos.subTotal : 0 }</span>
                     <button>COMPRAR</button>
                </div>
           </div>

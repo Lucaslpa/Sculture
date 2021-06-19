@@ -7,11 +7,10 @@ return ( <div id='Clothe'>
                    <img alt='clothe' id='imgtoscale' src={clothe.link}/>
                    <Link id='Clothe-hover'
                     to='/ProductView'
-                    style={{textDecoration:'none'}}
                     onClick={e => {
                       setProductOfView(clothe.id)
                       document.body.scrollTop = 0
-                    }}>COMPRAR PRODUTO</Link>
+                    }}><strong>VISUALIZAÇÃO RÁPIDA</strong></Link>
                  </div>
                   <div id='Clothe-title' >{clothe.title}</div>
                    {clothe.promotion ? (
