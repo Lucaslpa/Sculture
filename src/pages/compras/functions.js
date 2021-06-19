@@ -1,7 +1,7 @@
 
 
 export function FilterIgual(array, item,  igual, setState) {
-  const ar  =  array.filter(i => i[item] == igual || String(i[item]).includes(igual) )
+  const ar  =  array.filter(i => i[item] === igual || String(i[item]).includes(igual) )
    return setState(ar)
     }
 

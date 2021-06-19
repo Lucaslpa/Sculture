@@ -6,20 +6,20 @@ import {Sobre} from '../sobre/Sobre'
 import {Contato} from '../contato/Contato'
 import {ProductViews} from '../productview/ProductView'
 import {Cart} from '../cart/Cart'
-import {getTotalItemsInArrayFromLocalStorage,Update } from './function'
+import {getTotalItemsInArrayFromLocalStorage} from './function'
 import {
      BrowserRouter as Router,
      Switch,
      Route,
    } from "react-router-dom";
 import {clothesArray} from './comprasExample'
-import { useState, createContext, useEffect, useContext } from 'react'
+import { useState, createContext, useEffect} from 'react'
 import {UpdateCartContext} from './contextsUpdateCart'
 
 export const Home = () => {
    const [idProductToBeInProductView, setItemClothe] = useState()
     const [QuantityItemsInCart, setQuantityItemsItemsCart] = useState(0)
-   const UpdateCartQuantityItems = createContext(QuantityItemsInCart, setQuantityItemsItemsCart)
+    createContext(QuantityItemsInCart, setQuantityItemsItemsCart)
  
    
 

@@ -11,8 +11,7 @@ export const InformationResponsive =  ({clothe}) => {
     const {getNumberInArray} = useContext(updateCartContext)  
 
 
-    return (
-     
+    return ( 
        <div id='InformationResponsive'>
            <h5 id='Information-title' >{clothe.title}</h5>
            {

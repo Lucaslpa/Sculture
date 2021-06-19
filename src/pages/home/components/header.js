@@ -14,7 +14,7 @@ export const Header = () => {
       var getNavItemsArray 
       const [menuOpen, setMenuOpen] = useState(false)
       
-      const {NumberInArray, setNumberInArray} =  useContext(updateCartContext)
+      const {NumberInArray} =  useContext(updateCartContext)
       
 
       function selectPage(e) {

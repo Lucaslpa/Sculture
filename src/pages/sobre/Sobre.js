@@ -8,7 +8,7 @@ export const Sobre = () => {
      
     return (
         <main id='Sobre' >
-             <img width='90%' src="https://pm1.narvii.com/6161/e103c1fdbef7b271e6305c6e1206060d67674636_hq.jpg"/>
+             <img alt='' width='90%' src="https://pm1.narvii.com/6161/e103c1fdbef7b271e6305c6e1206060d67674636_hq.jpg"/>
             <div>
              <h4>Feitos com amor</h4>
               <p>

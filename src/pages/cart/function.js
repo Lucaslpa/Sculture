@@ -1,55 +1,69 @@
 
 export function DeleteItemFromClothesLocalStorage(id) {
+    console.log(id)
     const oldArray =  JSON.parse(localStorage.getItem('clothes'))
     const newArray = oldArray.filter(clothe => clothe.id !== id)
     localStorage.setItem("clothes", JSON.stringify([...newArray]))
 
 }
 
-export function getItemsArrayFromLocalStorage(setState) {
-    const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
-     if(!cartItemsArray){
-         return
-     }
-    setState(cartItemsArray)
-}
-
-export function getSubTotal(setState) {
-    const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
-    if(!cartItemsArray) {
-        return
-    }
-   const prices =  cartItemsArray.map(item => {
-         if(item.promotion) {
-             return item.promotion * item.quantity
-         } else {
-              return item.price * item.quantity
-         }
-    })
-    if(!prices.length) {
-        return
-      }
-    if(prices.length > 1) {
-         const sum = prices.reduce((previeus, current) => previeus + current)
-         setState(sum)
+export function getInfosCart() {
+    const localStorageClothesOfCart = JSON.parse(localStorage.getItem('clothes'))
+    if(localStorageClothesOfCart) {
+        return {
+            subTotal: getSubTotal(localStorageClothesOfCart),
+            clothesArray: convertOriginalArrayToArrayCartFormat(localStorageClothesOfCart)
+        }
     } else {
-         setState(prices[0])
-    }
-  
-
+       return}
 }
 
-export function updateItemClotheInArray(array, setArray ,id, itemToUpdate, value) {
-    
-    
-    const newArray = array.map(item => {
+export function convertOriginalArrayToArrayCartFormat(arrayClothes) {
+    const newClothesArray =  arrayClothes.map(item => {
+       if(item.quantity) {
+        item.price = item.price * item.quantity 
+        if(item.promotion) {
+            item.promotion = item.promotion * item.quantity
+        }
+        console.log(item.price, item.quantity,item.promotion)
+
+        return item
+       } else {
+           item.price = 0
+           item.promotion = 0
+           return item
+       }
+   })
+   return newClothesArray
+}
+
+
+export function getSubTotal(arrayClothes) {
+    if(arrayClothes) {
+        const prices =  arrayClothes.map(item => {
+            if(item.promotion) {
+                return item.promotion * item.quantity
+            } else {
+                 return item.price * item.quantity}})
+       if(prices.length>1) {
+        const sum = prices.reduce((previeus, current) => previeus + current)
+        return sum} 
+        else {
+          return prices[0]}}
+    else  {
+       return 0
+     }
+}
+
+export function updateQuantity(id, value) {
+    const cartItemsArray = JSON.parse(localStorage.getItem('clothes'))
+
+    const newArray = cartItemsArray.map(item => {
         if(item.id === id) {
-            item[itemToUpdate] = value
-            console.log('anterior', item.price, item.quantity)
+            item.quantity = parseInt(value)
             return item
         }else  return item
     } )
-       setArray([...newArray])
+       
        localStorage.setItem("clothes", JSON.stringify([...newArray]))
-     
   }

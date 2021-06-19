@@ -1,16 +1,28 @@
-import {useContext, useState} from 'react'
+import {useContext, useState, useEffect} from 'react'
 import {InformationResponsive} from './InformationResponsive'
 import {addClotheToCartInLocalStorage} from '../function'
 import {updateCartContext} from '../../home/contextsUpdateCart'
+import {useHistory} from 'react-router-dom'
 
 
 export const Information = ({clothe}) => {
     const [quantityValue, setQuantityValue] = useState(1)
-
+    let history = useHistory();
     const {getNumberInArray} = useContext(updateCartContext)  
+    function ifClotheisInvalidBackToHomePage(clothe) {
+        if(!clothe) {
+            history.push("/");
+        }
+    }
+    useEffect(() => {
+       ifClotheisInvalidBackToHomePage(clothe)
+    }, [])
 
     return (
-       <div id='Clothe-information' >
+       <>
+        {
+            clothe && (
+                <div id='Clothe-information' >
        <img src={clothe.link} ></img>
        <InformationResponsive clothe={clothe} />
        <div id='Information'>
@@ -64,5 +76,8 @@ export const Information = ({clothe}) => {
            }} >Adicionar ao carrinho</button>
        </div>
        </div>
+            )
+        }
+       </>
     )
 }

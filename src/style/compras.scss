@@ -26,8 +26,19 @@
      margin: 20px 0 ;
      display: flex;
      flex-direction: column;
+     animation-name: opacitymod;
+     animation-duration: 0.4s;
      position: relative;
      max-width: 330px;}
+ @keyframes opacitymod {
+      from {
+           opacity: 0;
+      }
+      to {
+           opacity: 1;
+      }
+      
+ }       
 #Clothe-title {
      font-weight: 600;
      font-size: calc(1em + 1vw);
@@ -43,8 +54,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      text-decoration: none;
      opacity: 0;}
-#Clothe-hover a {
+#Clothe-hover strong {
       color: white;
       height: 50px;
       display: flex;
