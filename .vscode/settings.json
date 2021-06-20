@@ -1,0 +1,10 @@
+{
+    "eslint.nodeEnv": "",
+    "eslint.workingDirectories": [
+    
+    ],
+    "eslint.options": {
+    
+    },
+    "editor.formatOnSave": true
+}

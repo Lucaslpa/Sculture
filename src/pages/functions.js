@@ -1,6 +1,4 @@
 
-
-
 export function removeCatálogoElement() {
     const catalogo = document.getElementById('Catálogo-link')
     const media = document.getElementById('Footer-Media')
